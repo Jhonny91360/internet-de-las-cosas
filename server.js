@@ -15,7 +15,8 @@ if (!iotHubConnectionString) {
 }
 console.log(`Using IoT Hub connection string [${iotHubConnectionString}]`);
 
-const eventHubConsumerGroup = "grupo-consumidor-prueba";
+const eventHubConsumerGroup =
+  process.env.IotHubConnectionString ?? "grupo-consumidor-prueba";
 console.log(eventHubConsumerGroup);
 if (!eventHubConsumerGroup) {
   console.error(
